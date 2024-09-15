@@ -1,12 +1,15 @@
-import "./App.css";
 import Blogs from "./components/Blogs/Blogs";
+import Bookmark from "./components/Bookmark/Bookmark";
 import Header from "./components/Header/Header";
 
 function App() {
   return (
     <>
       <Header />
-      <Blogs />
+      <div className="md:flex">
+        <Blogs />
+        <Bookmark />
+      </div>
     </>
   );
 }
