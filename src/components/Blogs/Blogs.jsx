@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 
-export default function Blogs() {
+export default function Blogs({ handleBookMark }) {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Blogs() {
       {/* Column Layout */}
       <div className="flex flex-col space-y-8">
         {blogs.map((blog) => (
-          <Blog key={blog.id} blog={blog} />
+          <Blog key={blog.id} blog={blog} handleBookMark={handleBookMark} />
         ))}
       </div>
     </div>
