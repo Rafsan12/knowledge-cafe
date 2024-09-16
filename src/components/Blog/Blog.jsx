@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export default function Blog({ blog, handleBookMark }) {
+export default function Blog({ blog, handleBookMark, handleReadingTime }) {
   const {
     title,
     cover,
@@ -14,7 +14,7 @@ export default function Blog({ blog, handleBookMark }) {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       {/* Cover Image */}
-      <img className="w-mc 39" src={cover} alt="cover" />
+      <img className="w-96 ml-12  rounded-xl" src={cover} alt="cover" />
 
       <div className="p-4">
         {/* Author Section */}
@@ -60,8 +60,13 @@ export default function Blog({ blog, handleBookMark }) {
               </svg>
             </button>
           </div>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            See More
+          <button
+            onClick={() => {
+              handleReadingTime(reading_time);
+            }}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Mark as read
           </button>
         </div>
       </div>

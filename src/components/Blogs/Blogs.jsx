@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 
-export default function Blogs({ handleBookMark }) {
+export default function Blogs({ handleBookMark, handleReadingTime }) {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -24,7 +25,12 @@ export default function Blogs({ handleBookMark }) {
       {/* Column Layout */}
       <div className="flex flex-col space-y-8">
         {blogs.map((blog) => (
-          <Blog key={blog.id} blog={blog} handleBookMark={handleBookMark} />
+          <Blog
+            key={blog.id}
+            blog={blog}
+            handleBookMark={handleBookMark}
+            handleReadingTime={handleReadingTime}
+          />
         ))}
       </div>
     </div>
