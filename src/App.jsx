@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="md:flex ">
+      <div className="md:flex max-w-7xl mx-auto">
         <Blogs />
         <Bookmark />
       </div>

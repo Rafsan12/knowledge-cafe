@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function Blog({ blog }) {
   const {
     title,
@@ -11,40 +12,38 @@ export default function Blog({ blog }) {
   } = blog;
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out">
-      <img
-        className="w-full h-48 object-cover rounded-t-lg"
-        src={cover}
-        alt="cover"
-      />
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      {/* Cover Image */}
+      <img className="w-full " src={cover} alt="cover" />
 
       <div className="p-4">
-        <div className="flex justify-between items-center mb-4">
-          <div className="flex items-center">
-            <img
-              className="w-12 h-12 rounded-full border-2 border-gray-200"
-              src={author_img}
-              alt="Author"
-            />
-            <div className="ml-4">
-              <h3 className="text-lg font-semibold">{author}</h3>
-
-              <p className="text-sm text-gray-500">{posted_date}</p>
-            </div>
-          </div>
-
-          <div className="text-sm text-gray-400">
-            <span>{reading_time} min read</span>
+        {/* Author Section */}
+        <div className="flex items-center mb-4">
+          <img
+            className="w-12 h-12 rounded-full mr-4"
+            src={author_img}
+            alt=""
+          />
+          <div>
+            <h3 className="text-lg font-semibold">{author}</h3>
+            <p className="text-gray-500">{posted_date}</p>
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold mb-2 hover:text-blue-500 transition-colors duration-200">
-          {title}
-        </h2>
+        {/* Title and Hashtag */}
+        <h2 className="text-2xl font-bold mb-2">{title}</h2>
+        <p className="text-orange-400 mb-2">{hashtag}</p>
 
-        <p className="text-sm text-blue-600 mb-4">{hashtag}</p>
+        {/* Blog Content */}
+        <p className="text-gray-700 mb-4">{write_blog}</p>
 
-        <p className="text-gray-700">{write_blog}</p>
+        {/* Reading Time and See More Button */}
+        <div className="flex justify-between items-center mt-4">
+          <span className="text-gray-500 text-sm">{reading_time} min read</span>
+          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            See More
+          </button>
+        </div>
       </div>
     </div>
   );
