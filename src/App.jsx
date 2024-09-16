@@ -13,15 +13,20 @@ function App() {
     setBookMarks(newBookMark);
   };
 
-  const handleReadingTime = (time) => {
+  const handleReadingTime = (id, time) => {
     const newReadingTime = readingTime + time;
     console.log(newReadingTime);
     setReadingTime(newReadingTime);
+
+    const remainingBookMark = bookMarks.filter(
+      (bookMark) => bookMark.id !== id
+    );
+    setBookMarks(remainingBookMark);
   };
   return (
     <>
       <Header />
-      <div className="md:flex max-w-7xl mx-auto">
+      <div className="md:flex max-w-7xl mx-auto  h-screen overflow-y-auto">
         <Blogs
           handleBookMark={handleBookMark}
           handleReadingTime={handleReadingTime}

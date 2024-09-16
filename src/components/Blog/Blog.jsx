@@ -9,6 +9,7 @@ export default function Blog({ blog, handleBookMark, handleReadingTime }) {
     posted_date,
     author_img,
     author,
+    id,
   } = blog;
 
   return (
@@ -62,7 +63,7 @@ export default function Blog({ blog, handleBookMark, handleReadingTime }) {
           </div>
           <button
             onClick={() => {
-              handleReadingTime(reading_time);
+              handleReadingTime(id, reading_time);
             }}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
           >
