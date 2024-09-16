@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { useState } from "react";
 import Blogs from "./components/Blogs/Blogs";
 import Bookmarks from "./components/Bookmarks/Bookmarks";
@@ -33,6 +34,7 @@ function App() {
         />
         <Bookmarks bookMarks={bookMarks} readingTime={readingTime} />
       </div>
+      <Analytics />
     </>
   );
 }
